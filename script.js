@@ -9,7 +9,7 @@ function addClone(){
 
     var cloned = document.getElementById('box').cloneNode(true); //clone the element
     document.body.appendChild(cloned); //add the cloned element to the page
-    
+
 }
 
 function submit(){
@@ -17,6 +17,11 @@ function submit(){
 const color = colorbox.value;
 const rows = number1box.value;
 const columns = number2box.value;
+
+box.style.backgroundColor = color; // WORK ON THIS
+
+
+
 
 
 

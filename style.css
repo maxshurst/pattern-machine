@@ -1,6 +1,8 @@
-.square {
-    background-color:greenyellow;
+#box{
     height: 100px;
     width: 100px;
-    border: 10px solid black;
-}
+    border: 1px solid black;
+    margin-bottom: 10px;
+    
+    
+    }
