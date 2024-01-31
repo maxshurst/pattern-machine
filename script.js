@@ -9,9 +9,13 @@ var boxes = 0;
 
 function submit(){
     
-    for (let i=0;i<boxes;i++){
-        document.getElementById('clone').remove();
+    const toDelete=document.getElementsByClassName('clone');
+    for (i=0;i<toDelete.length;i++){
+        toDelete[i].remove();
     }
+    console.log(toDelete);
+    console.log(toDelete.length);
+
     boxes=0;
     const color = colorbox.value;
     const rows = number1box.value;
@@ -22,10 +26,12 @@ function submit(){
     for (let i=0;i<rows; i++){
         for (let j=0;j<columns; j++){
             
-            const cloned = box.cloneNode(false); //clone the element
+            const cloned = document.createElement("div")
             cloned.style.left=(j*120+100).toString()+"px";
             cloned.style.top=(i*120+100).toString()+"px";
-            cloned.id='clone';
+            cloned.classList.add('clone');
+            cloned.style.backgroundColor = color;
+            cloned.id = `${i}&${j}`;
             document.body.appendChild(cloned); //add the cloned element to the page
         }
     }
