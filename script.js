@@ -56,13 +56,15 @@ function getrc(id){
     columns = ""
 
     for (let i=0; i < id.length; i++){
-if (onrows &&id [i]!= "&"){
-rows += id[i]
+        if (id [i]== "&"){
+            onrows=false
+        }
+        else if (onrows){
+            rows += id[i]
+        }
+        else if  (!onrows){
+            columns += id[i]
+        }
     }
-    
-else if  (onrows){
-columns += id[i]
-}
-}
-console.log(rows,columns)
+return rows, columns
 }
