@@ -46,4 +46,23 @@ function submit(){
 
 function changeColor(event){
     event.target.style.backgroundColor=colorbox.value;
+    const id = event.target.id
+    getrc(id)
+}
+
+function getrc(id){
+    rows = ""
+    onrows = true
+    columns = ""
+
+    for (let i=0; i < id.length; i++){
+if (onrows &&id [i]!= "&"){
+rows += id[i]
+    }
+    
+else if  (onrows){
+columns += id[i]
+}
+}
+console.log(rows,columns)
 }
