@@ -17,21 +17,23 @@ function deleteClones(){
 }
 
 function submit(){
-    
     deleteClones();
     boxes=0;
     const rows = number1box.value;
     const columns = number2box.value;
+    const color = colorbox.value;
 
-    box.style.backgroundColor = colorbox.value;
-    
+    const size = 500/Math.max(rows,columns)
+
     for (let i=0;i<rows; i++){
         for (let j=0;j<columns; j++){
             
             let cloned = document.createElement("div")
-            cloned.style.left=(j*120+100).toString()+"px";
-            cloned.style.top=(i*120+100).toString()+"px";
+            cloned.style.left=(j*size+100).toString()+"px";
+            cloned.style.top=(i*size+100).toString()+"px";
             cloned.classList.add('clone');
+            cloned.style.width=size.toString()+"px";
+            cloned.style.height=size.toString()+"px";
             cloned.addEventListener("click", changeColor);
             cloned.style.backgroundColor = color;
             cloned.id = `${i}&${j}`;
